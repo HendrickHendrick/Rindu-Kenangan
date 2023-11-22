@@ -1,0 +1,222 @@
+:root{
+    /* background-color:#9dd68c; */
+    --primary:rgb(255, 147, 75);
+    --bg :#9dd68c;
+}
+    
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg);
+    color: rgb(254, 254, 247);
+    min-height: 2000px;
+
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.4rem 7%;
+    background-color: rgba(227, 227, 227, 0.8);
+    border-bottom: 1px solid #513c28;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+  }
+  
+  .navbar .navbar-logo {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #9dd68c;
+    font-style: italic;
+  }
+  
+  .navbar .navbar-logo span {
+    color: var(--primary);
+  }
+
+.navbar .navbar-nav a{
+    padding-top: 1rem;
+    color: rgb(70, 70, 70);
+    display: inline-block;
+    margin: 0 1rem;
+    font-size: larger;
+    font-weight: bolder;
+}
+
+.navbar .navbar-nav a:hover{
+    color: #9dd68c;
+}
+
+.navbar .navbar-nav a::after{
+    content: '';
+    display: block;
+    padding-bottom: 0.5rem;
+    border-bottom: 0.2rem solid #9dd68c;
+    transform: scaleX(0);
+    transition: 0.2s linear;
+}
+
+.navbar .navbar-nav a:hover::after{
+    transform: scaleX(0.5);
+}
+
+.navbar .navbar-extra a{
+    color: rgb(70, 70, 70);
+    display: inline-block;
+    margin: 0 0.5rem;
+    padding-top: 1rem;
+    font-weight: bolder;
+}
+
+.navbar .navbar-extra a:hover{
+    color: #7a7a7a;
+}
+
+.navbar .navbar-extra a::after{
+    content: '';
+    display: block;
+    padding-bottom: 0.5rem;
+    border-bottom: 0.2rem solid #9dd68c;
+    transform: scaleX(0);
+    transition: 0.2s linear;
+}
+
+.navbar .navbar-extra a:hover::after{
+    transform: scaleX(1);
+}
+
+#hamburger-menu{
+    display: none;
+}
+
+/* Hero Section */
+.hero{
+    min-height: 100vh;
+    font-size: 1.43rem;
+    color: black;
+    display: flex;
+    align-items: center;
+    background-image: url('../img/Background.jpg');
+    padding: 0.4rem 0%;
+    background-repeat: no-repeat; 
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.hero .content {
+    padding: 1.4rem 7%;
+    margin-top: 15rem;
+}
+
+.hero .content p{
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    line-height: 1.4;
+    font-weight: 400;
+    text-shadow: 3px 3px 9px rgba(16, 6, 6, 0.5);
+}
+
+.hero::after{
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 21%;
+    bottom: 0 ;
+    background: linear-gradient(0deg, #9dd68c 7%,
+    rgb(254, 254, 247, 0) 20%);
+}
+
+.hero .content .cta{
+    margin-top: 1rem;
+    display: inline-block;
+    padding: 1rem 3rem;
+    font-size: 1.4rem;
+    color: aliceblue;
+    background-color:#9dd68c;
+    border-radius: 0.5rem;
+    box-shadow: 5px 8px 3px #737473;
+}
+
+/* About Sections */
+
+.about{
+    color: #fafff8;
+    padding: 9rem 7% 1.4rem;
+}
+
+.about h2{
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.about h2 span{
+    color: var(--primary);
+}
+
+
+/* Media Queries */
+
+/* Laptop */
+@media (max-width : 1366px){
+    html{
+        font-size: 75%;
+    }
+}
+
+/* Tablet */
+@media (max-width : 768px){
+    html{
+        font-size: 62.5%;
+    }
+    #hamburger-menu{
+        display: inline-block;
+    }
+    .navbar .navbar-nav{
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        background-color: rgb(255, 255, 255);
+        width: 30rem;
+        height: 100vh;
+        transition: 0.3s;
+    }
+    .navbar .navbar-nav.active{
+        right: 0;
+    }
+    .navbar .navbar-nav a{
+        color: rgb(77, 77, 77);
+        display: block;
+        margin: 1.5rem;
+        padding: 0.5rem;
+        font-size: 2rem;
+    }
+    .navbar .navbar-nav a::after{
+        transform-origin: 0 0;
+    }
+    .navbar .navbar-nav a.hover::after{
+        transform: scaleX(0.2)
+    }
+}
+
+/* Mobile */
+@media (max-width : 450px){
+    html{
+        font-size: 55%;
+    }
+}
